@@ -1,6 +1,7 @@
 package fastcampus.aop_part2_chapter03
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -65,6 +66,7 @@ class MainActivity : AppCompatActivity() {
                 "${numberPicker1.value}${numberPicker2.value}${numberPicker3.value}"
 
             if (passwordPreferences.getString("password", "000") == passwordFromUser) {
+                startActivity(Intent(this, DiaryActivity::class.java))
             } else {
                 showErrorAlertDialog()
             }
